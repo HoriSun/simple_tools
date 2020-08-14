@@ -1,0 +1,398 @@
+[global_config]
+  suppress_multiple_term_dialog = True
+[keybindings]
+  close_window = <Ctrl><Shift><Alt>Q
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[BantSim]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 7564707d-2125-403b-ac9c-c03bb6cb1296
+      last_active_window = True
+      maximised = True
+      order = 0
+      parent = ""
+      position = 65:24
+      size = 1855, 1056
+      title = jaten@jaten: ~/work/jaten/lab1/code/qr_rosws
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 702
+      ratio = 0.667613636364
+      type = VPaned
+    [[[child11]]]
+      order = 1
+      parent = child1
+      position = 622
+      ratio = 0.33692722372
+      type = HPaned
+    [[[child12]]]
+      order = 0
+      parent = child11
+      position = 108
+      ratio = 0.318965517241
+      type = VPaned
+    [[[child14]]]
+      order = 1
+      parent = child12
+      position = 114
+      ratio = 0.5
+      type = VPaned
+    [[[child17]]]
+      order = 1
+      parent = child11
+      position = 611
+      ratio = 0.500407497963
+      type = HPaned
+    [[[child18]]]
+      order = 0
+      parent = child17
+      position = 174
+      ratio = 0.508620689655
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 925
+      ratio = 0.500269541779
+      type = HPaned
+    [[[child21]]]
+      order = 1
+      parent = child17
+      position = 174
+      ratio = 0.508620689655
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 243
+      ratio = 0.350427350427
+      type = VPaned
+    [[[child5]]]
+      order = 1
+      parent = child3
+      position = 225
+      ratio = 0.503311258278
+      type = VPaned
+    [[[child8]]]
+      order = 1
+      parent = child2
+      position = 469
+      ratio = 0.672364672365
+      type = VPaned
+    [[[terminal10]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 2 && rosrun rqt_plot rqt_plot /cmd_vel/linear/x /cmd_vel/angular/z"' #'bash -c -i "trap $SHELL EXIT; ./devel/lib/jaten_qr_visual_agv/location `ls /dev/ttyUSB*`"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 1
+      parent = child8
+      profile = default
+      title = location
+      type = Terminal
+      uuid = b4852264-6ef8-44a3-a37e-ac882e64a950
+    [[[terminal13]]]
+      command = 'bash -c -i "trap $SHELL EXIT; roscore"'
+      directory = /home/jaten/
+      order = 0
+      parent = child12
+      profile = default
+      type = Terminal
+      uuid = 702f1569-26fc-4bd8-a65c-43a30fe2fb59
+    [[[terminal15]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && roslaunch turtlebot3_fake turtlebot3_fake.launch"'
+      directory = /home/jaten/
+      order = 0
+      parent = child14
+      profile = default
+      title = turtlebot3_fake
+      type = Terminal
+      uuid = a0f60c7a-7fe1-4ed0-922f-c7f0d118faf6
+    [[[terminal16]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && rosrun rviz rviz -d turtlebot3_fake.rviz"'
+      directory = /home/jaten/work/jaten/lab1/code/rosws/src/turtlebot3_simulations/turtlebot3_fake/rviz
+      order = 1
+      parent = child14
+      profile = default
+      title = rviz
+      type = Terminal
+      uuid = f320f55b-8c7e-41bf-84bf-c8bbd51a8a08
+    [[[terminal19]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && roslaunch kobuki_keyop keyop.launch"'
+      directory = /home/jaten/
+      order = 0
+      parent = child18
+      profile = default
+      title = keyop
+      type = Terminal
+      uuid = 08079d10-5dd6-45fe-8c5d-5bf7e03f3e77
+    [[[terminal20]]]
+      command = 'bash -c -i "trap $SHELL EXIT; rosrun jaten_qr_visual_agv shared_memory_daemon"'
+      directory = /home/jaten/
+      order = 1
+      parent = child18
+      profile = default
+      title = shared_memory_daemon
+      type = Terminal
+      uuid = 77e6c0f0-9656-4b66-bf42-902cc76642c4
+    [[[terminal22]]]
+      command = 'bash -c -i "trap $SHELL EXIT; bash socat_virtual_port_connect.sh"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws/src/jaten_qr_visual_agv/motion/script
+      order = 0
+      parent = child21
+      profile = default
+      title = socat
+      type = Terminal
+      uuid = 73d115f3-17a0-469c-9cc1-ce8302ba05af
+    [[[terminal23]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && python stm32_sim_turtlebot.py /tmp/ttyS0"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws/src/jaten_qr_visual_agv/motion/script
+      order = 1
+      parent = child21
+      profile = default
+      title = fake stm32
+      type = Terminal
+      uuid = 8baba708-703b-420d-ad9d-befb9e6dc1ce
+    [[[terminal4]]]
+      command = 'bash -c -i "trap $SHELL EXIT; ./devel/lib/jaten_qr_visual_agv/map_server src/jaten_qr_visual_agv/map_server/map/map1.txt"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child3
+      profile = default
+      title = map_server
+      type = Terminal
+      uuid = 0f3bd084-4535-4b04-bb47-b8602dbb28e8
+    [[[terminal6]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 3 && ./devel/lib/jaten_qr_visual_agv/navigation src/jaten_qr_visual_agv/config/AGV_parameter.txt"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child5
+      profile = default
+      title = navigation
+      type = Terminal
+      uuid = 291ed9ac-c233-4334-ba3a-6069e6983c3e
+    [[[terminal7]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 3 && ./devel/lib/jaten_qr_visual_agv/task src/jaten_qr_visual_agv/config/AGV_parameter.txt src/jaten_qr_visual_agv/config/position_parameter.txt -3.2 7.0 0 3 3"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 1
+      parent = child5
+      profile = default
+      title = task
+      type = Terminal
+      uuid = 936905fb-59f9-4a7a-91ed-8d724165c854
+    [[[terminal9]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 2 && ./devel/lib/jaten_qr_visual_agv/motion /tmp/ttyS1 src/jaten_qr_visual_agv/config/camera_param"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child8
+      profile = default
+      title = motion
+      type = Terminal
+      uuid = 7564707d-2125-403b-ac9c-c03bb6cb1296
+      #last_active_window = True
+      #maximised = True
+
+  [[BantReal]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 7564707d-2125-403b-ac9c-c03bb6cb1296
+      last_active_window = False
+      maximised = False
+      order = 0
+      parent = ""
+      position = 65:24
+      size = 1855, 1056
+      title = jaten@jaten: ~/work/jaten/lab1/code/qr_rosws
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 702
+      ratio = 0.667613636364
+      type = VPaned
+    [[[child11]]]
+      order = 1
+      parent = child1
+      position = 622
+      ratio = 0.33692722372
+      type = HPaned
+    [[[child12]]]
+      order = 0
+      parent = child11
+      position = 108
+      ratio = 0.318965517241
+      type = VPaned
+    [[[child14]]]
+      order = 1
+      parent = child12
+      position = 114
+      ratio = 0.5
+      type = VPaned
+    [[[child17]]]
+      order = 1
+      parent = child11
+      position = 611
+      ratio = 0.500407497963
+      type = HPaned
+    [[[child18]]]
+      order = 0
+      parent = child17
+      position = 174
+      ratio = 0.508620689655
+      type = VPaned
+    [[[child2]]]
+      order = 0
+      parent = child1
+      position = 925
+      ratio = 0.500269541779
+      type = HPaned
+    [[[child21]]]
+      order = 1
+      parent = child17
+      position = 174
+      ratio = 0.508620689655
+      type = VPaned
+    [[[child3]]]
+      order = 0
+      parent = child2
+      position = 243
+      ratio = 0.350427350427
+      type = VPaned
+    [[[child5]]]
+      order = 1
+      parent = child3
+      position = 225
+      ratio = 0.503311258278
+      type = VPaned
+    [[[child8]]]
+      order = 1
+      parent = child2
+      position = 469
+      ratio = 0.672364672365
+      type = VPaned
+    [[[terminal10]]]
+      command = 'bash -c -i "trap $SHELL EXIT; ./devel/lib/jaten_qr_visual_agv/location `ls /dev/ttyUSB*`"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 1
+      parent = child8
+      profile = default
+      title = location
+      type = Terminal
+      uuid = b4852264-6ef8-44a3-a37e-ac882e64a950
+    [[[terminal13]]]
+      command = 'bash -c -i "trap $SHELL EXIT; roscore"'
+      directory = /home/jaten/
+      order = 0
+      parent = child12
+      profile = default
+      type = Terminal
+      uuid = 702f1569-26fc-4bd8-a65c-43a30fe2fb59
+    [[[terminal15]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && roslaunch turtlebot3_fake turtlebot3_fake.launch"'
+      directory = /home/jaten/
+      order = 0
+      parent = child14
+      profile = default
+      title = turtlebot3_fake
+      type = Terminal
+      uuid = a0f60c7a-7fe1-4ed0-922f-c7f0d118faf6
+    [[[terminal16]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && rosrun rviz rviz -d turtlebot3_fake.rviz"'
+      directory = /home/jaten/work/jaten/lab1/code/rosws/src/turtlebot3_simulations/turtlebot3_fake/rviz
+      order = 1
+      parent = child14
+      profile = default
+      title = rviz
+      type = Terminal
+      uuid = f320f55b-8c7e-41bf-84bf-c8bbd51a8a08
+    [[[terminal19]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && roslaunch kobuki_keyop keyop.launch"'
+      directory = /home/jaten/
+      order = 0
+      parent = child18
+      profile = default
+      title = keyop
+      type = Terminal
+      uuid = 08079d10-5dd6-45fe-8c5d-5bf7e03f3e77
+    [[[terminal20]]]
+      command = 'bash -c -i "trap $SHELL EXIT; rosrun jaten_qr_visual_agv shared_memory_daemon"'
+      directory = /home/jaten/
+      order = 1
+      parent = child18
+      profile = default
+      title = shared_memory_daemon
+      type = Terminal
+      uuid = 77e6c0f0-9656-4b66-bf42-902cc76642c4
+    [[[terminal22]]]
+      command = 'bash -c -i "trap $SHELL EXIT; bash socat_virtual_port_connect.sh"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws/src/jaten_qr_visual_agv/motion/script
+      order = 0
+      parent = child21
+      profile = default
+      title = socat
+      type = Terminal
+      uuid = 73d115f3-17a0-469c-9cc1-ce8302ba05af
+    [[[terminal23]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 1 && python stm32_sim_turtlebot.py /tmp/ttyS0"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws/src/jaten_qr_visual_agv/motion/script
+      order = 1
+      parent = child21
+      profile = default
+      title = fake stm32
+      type = Terminal
+      uuid = 8baba708-703b-420d-ad9d-befb9e6dc1ce
+    [[[terminal4]]]
+      command = 'bash -c -i "trap $SHELL EXIT; ./devel/lib/jaten_qr_visual_agv/map_server src/jaten_qr_visual_agv/map_server/map/map1.txt"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child3
+      profile = default
+      title = map_server
+      type = Terminal
+      uuid = 0f3bd084-4535-4b04-bb47-b8602dbb28e8
+    [[[terminal6]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 3 && ./devel/lib/jaten_qr_visual_agv/navigation src/jaten_qr_visual_agv/config/AGV_parameter.txt"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child5
+      profile = default
+      title = navigation
+      type = Terminal
+      uuid = 291ed9ac-c233-4334-ba3a-6069e6983c3e
+    [[[terminal7]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 3 && ./devel/lib/jaten_qr_visual_agv/task src/jaten_qr_visual_agv/config/AGV_parameter.txt src/jaten_qr_visual_agv/config/position_parameter.txt"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 1
+      parent = child5
+      profile = default
+      title = task
+      type = Terminal
+      uuid = 936905fb-59f9-4a7a-91ed-8d724165c854
+    [[[terminal9]]]
+      command = 'bash -c -i "trap $SHELL EXIT; sleep 2 && valgrind ./devel/lib/jaten_qr_visual_agv/motion /tmp/ttyS1"'
+      directory = /home/jaten/work/jaten/lab1/code/qr_rosws
+      order = 0
+      parent = child8
+      profile = default
+      title = motion
+      type = Terminal
+      uuid = 7564707d-2125-403b-ac9c-c03bb6cb1296
+
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#050505"
+    background_darkness = 0.9
+    background_image = "/home/horisun/Pictures/Canada, North America.jpg"
+    background_type = image
+    scroll_on_output = False
+    scrollback_infinite = True
+    font = Monospace 12
+    use_system_font = False
