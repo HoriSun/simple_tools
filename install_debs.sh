@@ -105,7 +105,7 @@ function jaten_generate_dir_name_prefix() {
     #echo -e "Last ID of Debian packages is ${PRINT_PURPLE}${LAST_ID}${PRINT_RESET}"
     
     local NEW_ID=${LAST_ID}
-    let NEW_ID=NEW_ID+1
+    let NEW_ID=$((10#${NEW_ID}+1))
     local NEW_ID=`echo ${NEW_ID}|awk '{printf("%04d\n",$0)}'`
     #echo -e "New ID of Debian packages is ${PRINT_PURPLE}${NEW_ID}${PRINT_RESET}"
 
