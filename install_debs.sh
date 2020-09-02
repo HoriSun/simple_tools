@@ -117,9 +117,16 @@ function jaten_generate_dir_name_prefix() {
 
 function jaten_move_cache_deb() {
     
-    jaten_assert_param_num ${FUNCNAME} ${#} 1
+    jaten_assert_param_num ${FUNCNAME} ${#} 2
+    
 
     local DIR_NAME_SUFFIX=${1}
+    local RESUME_INSTALL=${2}
+    
+    if [ ${RESUME_INSTALL} -ne 0 ]; then
+        echo -e "Resume previous install, keep the caches."
+        return
+    fi
     
     jaten_get_num_of_contents ${CACHE_DIR} "deb"
     local NUM_OF_CONTENTS=${?}
@@ -160,6 +167,11 @@ function jaten_move_cache_deb() {
 
 function jaten_install_and_backup_debs() {
     if [ ${#} -gt 0 ]; then
+    
+        if [ ${1} = "-c" ]; then
+            return
+        fi
+    
         local NAME_CONCACT=""
         for arg in ${*}; do
             local NAME_CONCACT="${NAME_CONCACT}.${arg}"
@@ -174,7 +186,7 @@ function jaten_install_and_backup_debs() {
         
         if [ ${RETURN_VALUE} -eq 0 ]; then
             echo -e "${PRINT_BLUE}""apt-get ${*} succeded. Moving Debian packages.""${PRINT_RESET}"
-            jaten_move_cache_deb ${NAME_CONCACT}
+            jaten_move_cache_deb ${NAME_CONCACT} 0
             return 0
         else
             echo -e "${PRINT_RED}""[ERROR] apt-get ${*} error. Not moving.""${PRINT_RESET}"
@@ -195,7 +207,15 @@ else
 fi
 
 
-jaten_move_cache_deb before.`date +%Y%m%d`
+
+RESUME_INSTALL=0
+if [ ${#} -gt 0 ]; then
+    if [ ${1} = "-c" ]; then
+        RESUME_INSTALL=1
+    fi
+fi
+
+jaten_move_cache_deb before.`date +%Y%m%d` ${RESUME_INSTALL}
 
 
 if [ ${#} -gt 0 ]; then
